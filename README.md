@@ -1,8 +1,15 @@
 # <img src="icon.png" align="right" />
 # <img src="LogoCypress.png" align="left" />
 
-# Universo Cypress - QAcademy
-<h4>Estudo do Universo Cypress QAcademy</h4>
+# Bootcamp Cypress - QAcademy
+<h4>Estudo do Cypress QAcademy</h4>
+
+<br><br>
+⚡ LOGIN <br>
+<img src="Login.png" align="center" /><br><br>
+
+⚡ DASHBOARD <br>
+<img src="Dash.png" align="center" /><br><br>
 
 🧰 Ferramentas Utilizadas:<br>
 
@@ -30,6 +37,3 @@
     https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn
     yarn add cypress --D
 
-    ⚡ Aplicação <br>
-    # <img src="Login.png" align="center" />
-    # <img src="Dash.png" align="center" />
