@@ -42,3 +42,20 @@ Cypress.Commands.add('loggedUser', (name) => {
         .should('be.visible')
         .should('have.text', `Olá, ${name}`)
 })
+
+Cypress.Commands.add('passwordEmpty', (user) => {
+    cy.visit('/')
+    cy.get('input[name=instagram]').type(user.instagram)
+    cy.contains('button', 'Entrar').click()
+})
+
+Cypress.Commands.add('instagramEmpty', (user) => {
+    cy.visit('/')
+    cy.get('input[name=password]').type(user.password)
+    cy.contains('button', 'Entrar').click()
+})
+
+Cypress.Commands.add('loginFieldsEmpty', (user) => {
+    cy.visit('/')
+    cy.contains('button', 'Entrar').click()
+})
