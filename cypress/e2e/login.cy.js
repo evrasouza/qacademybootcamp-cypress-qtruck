@@ -27,39 +27,44 @@ describe('login', () => {
     cy.modalHaveText('Credenciais inválidas, tente novamente!')
   })
 
-  it('não deve logar com instagram fora do padrão', () => {
-    const user={
-      instagram:"evertonsouza",
-      password:"pwd123"
+  it('quando não preencho o campo senha', () => {
+    const user = {
+      instagram: "evertonsouza"
     }
-    
-    cy.login(user)
-    cy.modalHaveText('Credenciais inválidas, tente novamente!')
-
-  })
-
-  it('deve retornar mensagem de obrigatoriedade de senha', () => {   
-    const user={
-      instagram:"evertonsouza"
-    } 
     cy.passwordEmpty(user)
     cy.modalHaveText('Por favor, informe a sua senha secreta!')
 
   })
 
-  it('deve retornar mensagem de obrigatoriedade de código do Instagram', () => {   
-    const user={
-      password:"pwd123"
-    } 
+  it('quando não preencho o campo código do Instagram', () => {
+    const user = {
+      password: "pwd123"
+    }
     cy.instagramEmpty(user)
     cy.modalHaveText('Por favor, informe o seu código do Instagram!')
 
   })
 
-  it('deve retornar mensagem informe suas credenciais!', () => {    
+  it('quando não preencho nenhum dos campos', () => {
     cy.loginFieldsEmpty()
     cy.modalHaveText('Por favor, informe suas credenciais!')
 
   })
+
+  context('quando não preencho o(s) campo(s)', () => {
+
+    const message = [
+      { instagram: '@souzaeverton', password: '{backspace}', message: 'Por favor, informe a sua senha secreta!' },
+      { instagram: '{backspace}', password: 'pwd123}', message: 'Por favor, informe o seu código do Instagram!' },
+      { instagram: '{backspace}', password: '{backspace}', message: 'Por favor, informe suas credenciais!' }
+    ]
+
+    message.forEach((user) => {
+      it('deve exibir a mensagem ' + user.message, () => {
+        cy.emptyFields(user)
+      })
+    })
+  })
+
 
 })

@@ -59,3 +59,8 @@ Cypress.Commands.add('loginFieldsEmpty', (user) => {
     cy.visit('/')
     cy.contains('button', 'Entrar').click()
 })
+
+Cypress.Commands.add('emptyFields', (user) => {
+    cy.login(user)
+    cy.modalHaveText(user.message)
+})
