@@ -7,6 +7,12 @@ class MapPage {
             .should('be.visible')
             .should('have.text', `Olá, ${name}`)
     }
+
+    createLink(){
+        cy.get(el.addButton)
+            .should('be.visible')
+            .click()
+    }
 }
 
 export default new MapPage()

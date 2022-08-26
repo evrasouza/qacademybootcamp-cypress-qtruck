@@ -1,3 +1,4 @@
 exports.el = {
-    modalText: ('.logged-user')
+    modalText: ('.logged-user'),
+    addButton: ('a[href="/foodtrucks/create"]')
 }
