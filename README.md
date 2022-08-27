@@ -1,41 +1,70 @@
 # <img src="icon.png" align="right" />
 # <img src="LogoCypress.png" align="left" />
+<br><br><br><br>
 
-# Bootcamp Cypress - QAcademy
-<h4>Estudo do Cypress QAcademy</h4><br>
-
+## Projeto de automação de QAcademy Bootcamp<br> [Avançado em Cypress]
+Usando a Aplicação Qtruck desenvolvida para o curso. </br>
+Utilizando a estratégia de PageObject (PO).</br>
 Link Código da Aplicação: https://github.com/evrasouza/qtruck-application
 
-<br><br>
+<br>
 ⚡ LOGIN <br>
 <img src="Login.png" align="center" /><br><br>
 
 ⚡ DASHBOARD <br>
 <img src="Dash.png" align="center" /><br><br>
 
-🧰 Ferramentas Utilizadas:<br>
+### Componentes necessários para executar o projeto
 
-   ⚡ VSCode<br>
-   
-    https://code.visualstudio.com/download
+- Nodejs (Versão *16.16*)
+- yarn
+- cypress (verão *10.4.0*)
 
-   ⚡ Hyper e GitBash<br>
+## Tecnologias, pacotes e ferramentas utilizados 
 
-    https://gitforwindows.org/ - Windows
-    https://git-scm.com/download/mac - Mac
-    https://hyper.is/plugins
+:heavy_check_mark: <b> [VSCode](https://code.visualstudio.com/download) </b><br>
+:heavy_check_mark: <b> [Git](https://gitforwindows.org/) </b><br>
+:heavy_check_mark: <b> [Hyper](https://hyper.is/plugins) </b><br>
+:heavy_check_mark: <b> [Node.js](https://nodejs.org/en/) </b><br>
+:heavy_check_mark: <b> [Yarn](https://yarnpkg.com/) </b><br>
+:heavy_check_mark: <b> [cypress](https://www.cypress.io/) </b><br>
 
-   ⚡ NodeJs - Instalar versão 16x LTS<br>
+### Informações para execução do Projeto<br>
+*Para clonar e executar a aplicação acessar o link*
+```
+https://github.com/evrasouza/qtruck-application
+```
 
-    https://nodejs.org/en/download/
+*Clonar o projeto de teste automatizado*
+```
+$ git clone https://github.com/evrasouza/qacademybootcamp-cypress-qtruck
+```
 
-   ⚡ Yarn <br>
+### Informações baixar as dependencias do projeto de testes e executa-lo
 
-    https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
-    npm install --global yarn
+*_1º Passo - Baixar as dependencias de Test_* <br/>
+     Em um terminal baixar as dependencias de Teste <br/>
+     Na pasta Test no terminal, informe o comando <br/>
+     ```
+    $ yarn install -D
+    ```    <br/>
+*_2º Passo - Abrir o Cypress_* <br/>
+  Na pasta de Tests no terminal, informe o comando <br/>
+     ```
+    $ npx cypress open
+    ```  <br/>
+*_3º Passo - Após start o cypress aparecerá a tela de Boas vindas do Cypress_* <br/>
+  Deve escolher a opção do E2E Testing conforme imagem abaixo: <br/>
+  <img src="welcomeCypress.png" align="center" /><br><br>
+*_4º Passo - Irá carregar a tela para escolher qual navegador irá executar a automção_* <br/>
+  Será apresentado as navegadores instalados em sua máquina<br>
+  No exemplo abaixo, Executar *_Start E2E Testing in Chrome_*  <br/>
+  <img src="welcomeCypress1.png" align="center" /><br><br>
+*_5º Passo - irá carregar a inicialização da automação_* <br/>
+  Escolher qual arquivo deve ser inicializado <br/>
+  <img src="welcomeCypress2.png" align="center" /><br><br>
 
-   ⚡ Cypress <br>
-    
-    https://docs.cypress.io/guides/getting-started/installing-cypress#What-you-ll-learn
-    yarn add cypress --D
+*Em manutenção*
 
+*Autor:* Everton Souza <br/>
+*Curso:* QAcademy Bootcamp [Avançado em Cypress]
