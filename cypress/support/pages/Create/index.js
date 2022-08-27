@@ -10,9 +10,9 @@ class CreatePage {
     form(foodtruck) {
         cy.setGeoLocation(foodtruck.latitude, foodtruck.longitude)
 
-        cy.contains('label', 'Nome')
-            .parent()
-            .find('input').type(foodtruck.name)
+        if (foodtruck.name) cy.contains('label', 'Nome')
+                                .parent()
+                                .find('input').type(foodtruck.name)
 
         //if (foodtruck.name) cy.get(el.name).clear().type(foodtruck.name)
         if (foodtruck.description) cy.get(el.description).clear().type(foodtruck.description)
