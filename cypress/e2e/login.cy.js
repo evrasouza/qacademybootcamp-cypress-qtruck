@@ -9,6 +9,8 @@ describe('login', () => {
       password: 'pwd123'
     }
 
+    cy.apiCreateUser(user)
+
     loginPage.go()
     loginPage.form(user)
     loginPage.submit()
