@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 const { cypressBrowserPermissionsPlugin } = require('cypress-browser-permissions')
+
 const mongo = require('cypress-mongodb');
 
 module.exports = defineConfig({
@@ -7,9 +8,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       mongo.configurePlugin(on);
       config = cypressBrowserPermissionsPlugin(on, config)
+      return config
     },
     baseUrl: 'http://localhost:3000',
-    apiServer: 'https://localhost:3000',
     viewportWidth: 1920,
     viewportHeight: 1080,
     env: {
