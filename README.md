@@ -55,14 +55,14 @@ $ git clone https://github.com/evrasouza/qacademybootcamp-cypress-qtruck
     ```  <br/>
 *_3º Passo - Após start o cypress aparecerá a tela de Boas vindas do Cypress_* <br/>
   Deve escolher a opção do E2E Testing conforme imagem abaixo: <br/>
-  <img src="welcomeCypress.png" align="center" /><br><br>
+  <img src="welcomeCypress.PNG" align="center" /><br><br>
 *_4º Passo - Irá carregar a tela para escolher qual navegador irá executar a automção_* <br/>
   Será apresentado as navegadores instalados em sua máquina<br>
   No exemplo abaixo, Executar *_Start E2E Testing in Chrome_*  <br/>
-  <img src="welcomeCypress1.png" align="center" /><br><br>
+  <img src="welcomeCypress1.PNG" align="center" /><br><br>
 *_5º Passo - irá carregar a inicialização da automação_* <br/>
   Escolher qual arquivo deve ser inicializado <br/>
-  <img src="welcomeCypress2.png" align="center" /><br><br>
+  <img src="welcomeCypress2.PNG" align="center" /><br><br>
 
 *Em manutenção*
 
