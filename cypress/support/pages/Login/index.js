@@ -1,4 +1,3 @@
-import { el } from './elements'
 import modal from '../components/Modal'
 
 class LoginPage {
@@ -7,19 +6,36 @@ class LoginPage {
         this.modal = modal
     }
 
-    go() {
-        cy.visit('/')
-        cy.contains(el.title).should('be.visible')
+    go(lat = '-22.88012', long = '-47.04733') {
+        cy.visit('/', this.mockLocation(lat, long))
     }
 
     form(user) {
-        if (user.instagram) cy.get(el.instagram).clear().type(user.instagram)
-        if (user.password) cy.get(el.password).clear().type(user.password)
+        if (user.instagram) cy.get('input[name=instagram]').type(user.instagram)
+        if (user.password) cy.get('input[name=password]').type(user.password)
     }
 
     submit() {
-        cy.contains(el.signIn).click()
+        cy.contains('button', 'Entrar').click()
     }
+
+    goToSignup() {
+        cy.contains('a', 'Cadastre-se').click()
+    }
+
+    mockLocation(latitude, longitude) {
+        return {
+            onBeforeLoad(win) {
+                cy.stub(win.navigator.geolocation, "getCurrentPosition").callsFake((cb, err) => {
+                    if (latitude && longitude) {
+                        return cb({ coords: { latitude, longitude } })
+                    }
+                    throw err({ code: 1 })
+                });
+            }
+        }
+    }
+
 }
 
 export default new LoginPage()

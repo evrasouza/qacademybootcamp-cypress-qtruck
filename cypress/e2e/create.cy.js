@@ -12,8 +12,8 @@ describe('Recomendação', () => {
     }
 
     const foodtruck = {
-      latitude: '-22.875860961595944',
-      longitude: '-47.04837391124725',
+      latitude: '-22.88012',
+      longitude: '-47.04733',
       name: 'Tienda Del Chavo',
       details: 'O melhor lugar para tomar o suco de limão que parece de groselha e tem gosto de tamarindo',
       opening_hours: 'das 14h às 20h',
@@ -31,14 +31,14 @@ describe('Recomendação', () => {
 
   it('não deve cadastrar foodtruck com nome duplicado', () => {
         const user = {
-          name: 'Margaret',
-          instagram: '@margaret',
+          name: 'Bruce',
+          instagram: '@bruce',
           password: 'pwd123'
       }
 
       const foodtruck = {
-          latitude: '-23.583654062428796',
-          longitude: '-46.67752861976624',
+        latitude: '-22.88107',
+        longitude: '-47.04692',
           name: 'Churros da Dona Florinda',
           details: 'O melhor churros mexicado da região.',
           opening_hours: 'das 15h às 19h',
@@ -67,11 +67,16 @@ describe('Recomendação', () => {
       password: 'pwd123'
     }
 
+    const foodtruck = {
+      latitude: '-22.88111',
+      longitude: '-47.04819',
+    }
+
     cy.apiCreateUser(user)
     cy.uiLogin(user)
 
     mapPage.createLink()
-    createPage.form({})
+    cy.setGeolocation(foodtruck.latitude, foodtruck.longitude)
     createPage.submit()
 
     createPage.modal.haveText('Os campos nome, descrição e horário de funcionamento devem ser informados para recomendar um food truck!')
