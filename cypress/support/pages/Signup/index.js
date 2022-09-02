@@ -1,4 +1,3 @@
-import { el } from './elements'
 import modal from '../components/Modal'
 
 class SignupPage {
@@ -9,17 +8,16 @@ class SignupPage {
 
     go() {
         cy.visit('/signup')
-        cy.contains(el.title).should('be.visible')
     }
 
     form(user) {
-        if (user.name) cy.get(el.name).clear().type(user.name)
-        if (user.instagram) cy.get(el.instagram).clear().type(user.instagram)
-        if (user.password) cy.get(el.password).clear().type(user.password)
+        if (user.name) cy.get('input[name=name]').type(user.name)
+        if (user.instagram) cy.get('input[name=instagram]').type(user.instagram)
+        if (user.password) cy.get('input[name=password]').type(user.password)
     }
 
     submit() {
-        cy.contains(el.signIn).click()
+        cy.contains('button', 'Cadastrar').click()
     }
 }
 
