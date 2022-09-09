@@ -1,6 +1,10 @@
-
+import modal from '../components/Modal'
 
 class FoodTruckPage {
+
+    constructor() {
+        this.modal = modal
+    }
 
     addReview(review) {
         cy.get('textarea[name=comment]').type(review.comment)
