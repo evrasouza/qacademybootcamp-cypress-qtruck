@@ -9,14 +9,16 @@ class FoodTruckPage {
         cy.contains('button', 'Enviar avaliação').click()
     }
 
-    validateReview(user, review) {
-        cy.get('div[class=details]')
-            .should('be.visible')
-            .should('have.text', user.name+user.instagram)
-        
-        cy.get('div[class=comment]')
-            .should('be.visible')
+    reviewShouldBe(user, review) {
+        cy.contains('.review-box', user.instagram).as('reviewBox')
+
+        cy.get('@reviewBox')
+            .find('.comment p')
             .should('have.text', review.comment)
+        
+        cy.get('@reviewBox')
+            .find('.stars svg')
+            .should('have.length', review.stars)
     }
 
 }

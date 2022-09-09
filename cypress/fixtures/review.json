@@ -1,0 +1,19 @@
+{
+    "user": {
+        "name": "Madruga Ramon",
+        "instagram": "@madruguinha",
+        "password": "pwd123"
+    },
+    "foodtruck": {
+        "latitude": "-22.88111",
+        "longitude": "-47.04819",
+        "name": "Super de Quico",
+        "details": "Sucos de alta qualidade direto do saquinho.",
+        "opening_hours": "das 14h às 20h",
+        "open_on_weekends": false
+    },
+    "review": {
+        "comment": "O suco de limão estava muito bom, mas veio muito pouco.",
+        "stars": 5
+    }
+}

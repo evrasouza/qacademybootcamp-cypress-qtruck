@@ -79,7 +79,8 @@ describe('Recomendação', () => {
     cy.setGeolocation(foodtruck.latitude, foodtruck.longitude)
     createPage.submit()
 
-    createPage.modal.haveText('Os campos nome, descrição e horário de funcionamento devem ser informados para recomendar um food truck!')
+    const message = 'Os campos nome, descrição e horário de funcionamento devem ser informados para recomendar um food truck!'
+    createPage.modal.haveText(message)
 
   })
 
