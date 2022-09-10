@@ -32,6 +32,8 @@ describe('Avaliações', ()=> {
             foodTruckPage.addReview(data.review)
             foodTruckPage.reviewShouldBe(data.user, data.review)
 
+            foodTruckPage.checkEmptyReviewFields(data.review)
+
             foodTruckPage.addReview(data.review)
             foodTruckPage.modal.haveText('Você já enviou sua avaliação!')
         })

@@ -25,6 +25,14 @@ class FoodTruckPage {
             .should('have.length', review.stars)
     }
 
+    checkEmptyReviewFields(review){
+        cy.get('textarea[name=comment]')
+        .should('be.empty')
+
+        cy.get(`input[name=stars][value="${review.stars}"]`)
+        .should('not.be.checked')
+    }
+
 }
 
 export default new FoodTruckPage()
